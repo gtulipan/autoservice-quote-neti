@@ -31,7 +31,7 @@ A project letöltése után a root mappában a `./gradlew clean build --refresh-
 Sikeres futtatása után a `docker-compose build --no-cache; docker-compose up -d` parancsot adjuk ki, szintén a root mappában.
 
 #### Tesztelés:
-A `http://localhost:8080/swagger-ui/index.html` oldalt használhatjuk, vagy töltsük le az xml-to-java-client alkalmazást a `https://github.com/gtulipan/autoservice-quote-neti-java_client` oldalról.
+A `http://localhost:8080/swagger-ui/index.html` oldalt használhatjuk, vagy töltsük le az autoservice-quote-neti-java-client alkalmazást a `https://github.com/gtulipan/autoservice-quote-neti-java_client` oldalról.
 
 Swagger-es tesztelés esetén a felkínált Json-t kell módosítani/bővíteni.
 
