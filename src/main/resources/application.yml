@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: autoservice-quote-neti
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:DEBUG}
+    org:
+      springframework:
+        web: ${LOGGING_LEVEL_ROOT:DEBUG}
+  file:
+    path: ${LOG_FOLDER:/tmp}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+quote:
+  discount:
+    vip:
+      big: ${DISCOUNT_VIP_BIG:120000}
+      medium: ${DISCOUNT_VIP_MEDIUM:50000}
+      small: ${DISCOUNT_VIP_SMALL:12000}
+    loyal:
+      percentage: ${DISCOUNT_LOYAL_PERCENTAGE:0.95}
+    total:
+      amount:
+        big: ${DISCOUNT_ON_TOTAL_AMOUNT_BIG:1000000}
+        medium: ${DISCOUNT_ON_TOTAL_AMOUNT_MEDIUM:500000}
+        small: ${DISCOUNT_ON_TOTAL_AMOUNT_SMALL:200000}
+  component:
+    benefit:
+      key:
+        normal: ${COMPONENT_BENEFIT_KEY_NORMAL:1.12}
+        vip: ${COMPONENT_BENEFIT_KEY_VIP:1.10}
+  labor:
+    cost:
+      percentage:
+        multiplier: ${LABOR_COST_PERCENTAGE_MULTIPLIER:0.3}
+      minimal: ${LABOR_COST_MINIMAL:10000}
+

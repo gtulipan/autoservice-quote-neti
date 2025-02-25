@@ -1,0 +1,35 @@
+services:
+  quote:
+    env_file:
+      - .env
+    build:
+      context: .
+      args:
+        LOG_FOLDER: ${LOG_FOLDER}
+        SERVER_PORT: ${SERVER_PORT}
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - LOG_FOLDER=${LOG_FOLDER}
+      - LOGGING_LEVEL_ROOT=${LOGGING_LEVEL_ROOT}
+      - DISCOUNT_ON_TOTAL_AMOUNT_BIG=${DISCOUNT_ON_TOTAL_AMOUNT_BIG}
+      - DISCOUNT_ON_TOTAL_AMOUNT_MEDIUM=${DISCOUNT_ON_TOTAL_AMOUNT_MEDIUM}
+      - DISCOUNT_ON_TOTAL_AMOUNT_SMALL=${DISCOUNT_ON_TOTAL_AMOUNT_SMALL}
+      - COMPONENT_BENEFIT_KEY_NORMAL=${COMPONENT_BENEFIT_KEY_NORMAL}
+      - COMPONENT_BENEFIT_KEY_VIP=${COMPONENT_BENEFIT_KEY_VIP}
+      - LABOR_COST_PERCENTAGE_MULTIPLIER=${LABOR_COST_PERCENTAGE_MULTIPLIER}
+      - LABOR_COST_MINIMAL=${LABOR_COST_MINIMAL}
+      - DISCOUNT_VIP_BIG=${DISCOUNT_VIP_BIG}
+      - DISCOUNT_VIP_MEDIUM=${DISCOUNT_VIP_MEDIUM}
+      - DISCOUNT_VIP_SMALL=${DISCOUNT_VIP_SMALL}
+      - DISCOUNT_LOYAL_PERCENTAGE=${DISCOUNT_LOYAL_PERCENTAGE}
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    container_name: quote
+    networks:
+      - quote-network
+
+networks:
+  quote-network:
+    name: quote-network
+    driver: bridge
+    attachable: true
